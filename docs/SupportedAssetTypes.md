@@ -207,8 +207,8 @@ are supported to be dumped to disk (using `Unlinker`) and loaded from disk (usin
 | SndPatch             | ❌              | ❌              |                                                                              |
 | clipMap_t            | ✅              | ✅              | Dumped/loaded as a `d3dbsp` with collision lumps and entities.               |
 | ComWorld             | ✅              | ✅              | Dumped/loaded as a `d3dbsp` with primary light, water and burnable lumps.    |
-| GameWorldSp          | ❌              | ❌              |                                                                              |
-| GameWorldMp          | ❌              | ❌              |                                                                              |
+| GameWorldSp          | ✅              | ✅              | Dumped/loaded as a `d3dbsp` path connections lump with nodes from entities.  |
+| GameWorldMp          | ✅              | ✅              | Dumped/loaded as a `d3dbsp` path connections lump with nodes from entities.  |
 | MapEnts              | ✅              | ✅              |                                                                              |
 | GfxWorld             | ❌              | ❌              |                                                                              |
 | GfxLightDef          | ✅              | ✅              |                                                                              |
