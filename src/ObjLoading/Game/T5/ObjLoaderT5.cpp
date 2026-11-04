@@ -14,6 +14,7 @@
 #include "Game/T5/XModel/LoaderXModelT5.h"
 #include "LightDef/LightDefLoaderT5.h"
 #include "Localize/LoaderLocalizeT5.h"
+#include "Maps/MapEntsLoaderT5.h"
 #include "Material/LoaderMaterialT5.h"
 #include "ObjLoading.h"
 #include "PhysPreset/GdtLoaderPhysPresetT5.h"
@@ -130,7 +131,7 @@ namespace
         // collection.AddAssetCreator(std::make_unique<AssetLoaderComWorld>(memory));
         // collection.AddAssetCreator(std::make_unique<AssetLoaderGameWorldSp>(memory));
         // collection.AddAssetCreator(std::make_unique<AssetLoaderGameWorldMp>(memory));
-        // collection.AddAssetCreator(std::make_unique<AssetLoaderMapEnts>(memory));
+        collection.AddAssetCreator(map_ents::CreateLoaderT5(memory, searchPath));
         // collection.AddAssetCreator(std::make_unique<AssetLoaderGfxWorld>(memory));
         collection.AddAssetCreator(light_def::CreateLoaderT5(memory, searchPath));
         collection.AddAssetCreator(font::CreateLoaderT5(memory, searchPath));
