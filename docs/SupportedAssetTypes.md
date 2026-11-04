@@ -206,7 +206,7 @@ are supported to be dumped to disk (using `Unlinker`) and loaded from disk (usin
 | SndBank              | ❌              | ❌              |                                                                              |
 | SndPatch             | ❌              | ❌              |                                                                              |
 | clipMap_t            | ✅              | ✅              | Dumped/loaded as a `d3dbsp` with collision lumps and entities.               |
-| ComWorld             | ❌              | ❌              |                                                                              |
+| ComWorld             | ✅              | ✅              | Dumped/loaded as a `d3dbsp` with primary light, water and burnable lumps.    |
 | GameWorldSp          | ❌              | ❌              |                                                                              |
 | GameWorldMp          | ❌              | ❌              |                                                                              |
 | MapEnts              | ✅              | ✅              |                                                                              |

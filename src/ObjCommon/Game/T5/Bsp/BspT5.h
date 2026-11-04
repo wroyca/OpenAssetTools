@@ -176,6 +176,75 @@ namespace T5
         float length;
     };
 
+    struct DiskPrimaryLight
+    {
+        uint8_t type;
+        uint8_t canUseShadowMap;
+        uint16_t cullDist;
+        uint8_t priority;
+        uint8_t pad[3];
+        float dir[3];
+        float origin[3];
+        float color[3];
+        float specularColor[3];
+        float attenuation[3];
+        float angle[3];
+        float unused[4];
+        float falloffStart;
+        float radius;
+        float falloffLerp[2];
+        float cosHalfFovOuter;
+        float cosHalfFovInner;
+        int exponent;
+        float rotationLimit;
+        float translationLimit;
+        float angleW;
+        float mipDistance;
+        float aAbB[4];
+        float cookieControl0[4];
+        float cookieControl1[4];
+        float cookieControl2[4];
+        char defName[64];
+    };
+
+    struct DiskWaterHeader
+    {
+        int minx;
+        int miny;
+        int maxx;
+        int maxy;
+        int reserved;
+    };
+
+    struct DiskWaterCell
+    {
+        int16_t waterheight;
+        uint8_t flooroffset;
+        uint8_t shoredist;
+        uint8_t color[4];
+    };
+
+    struct DiskBurnableHeader
+    {
+        int minx;
+        int miny;
+        int maxx;
+        int maxy;
+    };
+
+    struct DiskBurnableCell
+    {
+        int x;
+        int y;
+        int reserved;
+        int dataIndex;
+    };
+
+    struct DiskBurnableBlock
+    {
+        uint8_t states[32];
+    };
+
     static_assert(sizeof(dplane_t) == 16);
     static_assert(sizeof(dbrushside_t) == 8);
     static_assert(sizeof(dbrush_t) == 4);
@@ -185,6 +254,12 @@ namespace T5
     static_assert(sizeof(DiskCollPartition) == 20);
     static_assert(sizeof(DiskCollAabbTree) == 32);
     static_assert(sizeof(DiskCollBorder) == 28);
+    static_assert(sizeof(DiskPrimaryLight) == 268);
+    static_assert(sizeof(DiskWaterHeader) == 20);
+    static_assert(sizeof(DiskWaterCell) == 8);
+    static_assert(sizeof(DiskBurnableHeader) == 16);
+    static_assert(sizeof(DiskBurnableCell) == 16);
+    static_assert(sizeof(DiskBurnableBlock) == 32);
 
     class BspFile
     {

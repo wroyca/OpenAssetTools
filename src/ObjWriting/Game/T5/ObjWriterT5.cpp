@@ -11,6 +11,7 @@
 #include "Localize/LocalizeDumperT5.h"
 #include "Maps/BspWriterT5.h"
 #include "Maps/ClipMapDumperT5.h"
+#include "Maps/ComWorldDumperT5.h"
 #include "PhysConstraints/PhysConstraintsInfoStringDumperT5.h"
 #include "PhysPreset/PhysPresetInfoStringDumperT5.h"
 #include "RawFile/RawFileDumperT5.h"
@@ -39,7 +40,7 @@ void ObjWriter::RegisterAssetDumpers(AssetDumpingContext& context)
     // REGISTER_DUMPER(AssetDumperSndPatch, m_sound_patch)
     RegisterAssetDumper(std::make_unique<clip_map::DumperT5>());
     RegisterAssetDumper(std::make_unique<clip_map::DumperPvsT5>());
-    // REGISTER_DUMPER(AssetDumperComWorld, m_com_world)
+    RegisterAssetDumper(std::make_unique<com_world::DumperT5>());
     // REGISTER_DUMPER(AssetDumperGameWorldSp, m_game_world_sp)
     // REGISTER_DUMPER(AssetDumperGameWorldMp, m_game_world_mp)
     RegisterAssetDumper(std::make_unique<map_ents::DumperT5>());
