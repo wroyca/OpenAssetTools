@@ -12,6 +12,7 @@
 #include "PhysConstraints/PhysConstraintsInfoStringDumperT5.h"
 #include "PhysPreset/PhysPresetInfoStringDumperT5.h"
 #include "RawFile/RawFileDumperT5.h"
+#include "Sound/SndBankDumperT5.h"
 #include "StringTable/StringTableDumperT5.h"
 #include "Weapon/WeaponDumperT5.h"
 
@@ -33,7 +34,7 @@ void ObjWriter::RegisterAssetDumpers(AssetDumpingContext& context)
 #endif
         ));
     RegisterAssetDumper(std::make_unique<image::DumperT5>());
-    // REGISTER_DUMPER(AssetDumperSndBank, m_sound_bank)
+    RegisterAssetDumper(std::make_unique<sound::SndBankDumperT5>());
     // REGISTER_DUMPER(AssetDumperSndPatch, m_sound_patch)
     // REGISTER_DUMPER(AssetDumperClipMap, m_clip_map)
     // REGISTER_DUMPER(AssetDumperComWorld, m_com_world)
