@@ -20,6 +20,7 @@
 #include "PhysPreset/RawLoaderPhysPresetT5.h"
 #include "RawFile/LoaderRawFileT5.h"
 #include "Sound/LoaderSoundBankT5.h"
+#include "Sound/LoaderSoundPatchT5.h"
 #include "StringTable/LoaderStringTableT5.h"
 #include "Weapon/FlameTableLoaderT5.h"
 #include "Weapon/WeaponGdtLoaderT5.h"
@@ -126,7 +127,7 @@ namespace
         collection.AddAssetCreator(image::CreateLoaderEmbeddedT5(memory, searchPath));
         collection.AddAssetCreator(image::CreateLoaderExternalT5(memory, searchPath));
         collection.AddAssetCreator(sound::CreateSoundBankLoaderT5(memory, searchPath));
-        // collection.AddAssetCreator(std::make_unique<AssetLoaderSoundPatch>(memory));
+        collection.AddAssetCreator(sound::CreateSoundPatchLoaderT5(memory, searchPath));
         // collection.AddAssetCreator(std::make_unique<AssetLoaderClipMapPvs>(memory));
         // collection.AddAssetCreator(std::make_unique<AssetLoaderComWorld>(memory));
         // collection.AddAssetCreator(std::make_unique<AssetLoaderGameWorldSp>(memory));

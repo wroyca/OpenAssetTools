@@ -204,7 +204,7 @@ are supported to be dumped to disk (using `Unlinker`) and loaded from disk (usin
 | MaterialTechniqueSet | ✅              | ❌              | For shaders: only dumps/loads shader bytecode.                               |
 | GfxImage             | ✅              | ❌              | A few special image encodings are not yet supported.                         |
 | SndBank              | ✅              | ✅              | Sound files are dumped/loaded as the game's own `snd_asset` files.           |
-| SndPatch             | ❌              | ❌              |                                                                              |
+| SndPatch             | ✅              | ✅              |                                                                              |
 | clipMap_t            | ❌              | ❌              |                                                                              |
 | ComWorld             | ❌              | ❌              |                                                                              |
 | GameWorldSp          | ❌              | ❌              |                                                                              |

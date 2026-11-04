@@ -168,6 +168,23 @@ namespace T5
         // clang-format on
     };
 
+    inline constexpr const char* SOUND_MASTERS[]{
+        // clang-format off
+        "default",
+        "tv_quiet",
+        "tv_loud",
+        "headphone_quiet",
+        "headphone_loud",
+        "tv_neutral",
+        "surround_quiet",
+        "surround_loud",
+        "surround_neutral",
+        "neutral_quiet",
+        "neutral_loud",
+        "neutral_neutral",
+        // clang-format on
+    };
+
     inline constexpr const char* SOUND_SNAPSHOTS[]{
         // clang-format off
         "default",
