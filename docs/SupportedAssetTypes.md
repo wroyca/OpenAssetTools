@@ -205,7 +205,7 @@ are supported to be dumped to disk (using `Unlinker`) and loaded from disk (usin
 | GfxImage             | ✅              | ❌              | A few special image encodings are not yet supported.                         |
 | SndBank              | ❌              | ❌              |                                                                              |
 | SndPatch             | ❌              | ❌              |                                                                              |
-| clipMap_t            | ❌              | ❌              |                                                                              |
+| clipMap_t            | ✅              | ✅              | Dumped/loaded as a `d3dbsp` with collision lumps and entities.               |
 | ComWorld             | ❌              | ❌              |                                                                              |
 | GameWorldSp          | ❌              | ❌              |                                                                              |
 | GameWorldMp          | ❌              | ❌              |                                                                              |

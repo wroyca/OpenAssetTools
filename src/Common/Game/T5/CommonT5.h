@@ -3,6 +3,8 @@
 #include "T5.h"
 #include "Utils/Djb2.h"
 
+#include <cctype>
+
 namespace T5
 {
     class Common
@@ -44,6 +46,26 @@ namespace T5
             // Using djb2 with a 0 starting value makes a worse hash func apparently
             // but who am I to judge
             return R_HashString(string, 0u);
+        }
+
+        static constexpr uint32_t SND_HashName(const char* str)
+        {
+            if (!str || !*str)
+                return 0;
+
+            auto result = 0x1505u;
+            auto offset = 0u;
+
+            while (str[offset])
+            {
+                const auto c = static_cast<unsigned>(tolower(str[offset++]));
+                result = c + 0x1003Fu * result;
+            }
+
+            if (!result)
+                return 1;
+
+            return result;
         }
 
         static PackedTexCoords Vec2PackTexCoords(const float (&in)[2]);

@@ -9,6 +9,8 @@
 #include "Game/T5/XModel/XModelDumperT5.h"
 #include "LightDef/LightDefDumperT5.h"
 #include "Localize/LocalizeDumperT5.h"
+#include "Maps/BspWriterT5.h"
+#include "Maps/ClipMapDumperT5.h"
 #include "PhysConstraints/PhysConstraintsInfoStringDumperT5.h"
 #include "PhysPreset/PhysPresetInfoStringDumperT5.h"
 #include "RawFile/RawFileDumperT5.h"
@@ -35,7 +37,8 @@ void ObjWriter::RegisterAssetDumpers(AssetDumpingContext& context)
     RegisterAssetDumper(std::make_unique<image::DumperT5>());
     // REGISTER_DUMPER(AssetDumperSndBank, m_sound_bank)
     // REGISTER_DUMPER(AssetDumperSndPatch, m_sound_patch)
-    // REGISTER_DUMPER(AssetDumperClipMap, m_clip_map)
+    RegisterAssetDumper(std::make_unique<clip_map::DumperT5>());
+    RegisterAssetDumper(std::make_unique<clip_map::DumperPvsT5>());
     // REGISTER_DUMPER(AssetDumperComWorld, m_com_world)
     // REGISTER_DUMPER(AssetDumperGameWorldSp, m_game_world_sp)
     // REGISTER_DUMPER(AssetDumperGameWorldMp, m_game_world_mp)
@@ -57,4 +60,6 @@ void ObjWriter::RegisterAssetDumpers(AssetDumpingContext& context)
     // REGISTER_DUMPER(AssetDumperDDLRoot, m_ddl)
     // REGISTER_DUMPER(AssetDumperGlasses, m_glasses)
     // REGISTER_DUMPER(AssetDumperEmblemSet, m_emblem_set)
+
+    RegisterAssetDumper(std::make_unique<bsp::BspWriterT5>());
 }

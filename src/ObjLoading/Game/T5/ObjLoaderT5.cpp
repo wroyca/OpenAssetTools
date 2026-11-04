@@ -14,6 +14,7 @@
 #include "Game/T5/XModel/LoaderXModelT5.h"
 #include "LightDef/LightDefLoaderT5.h"
 #include "Localize/LoaderLocalizeT5.h"
+#include "Maps/LoaderClipMapT5.h"
 #include "Maps/MapEntsLoaderT5.h"
 #include "Material/LoaderMaterialT5.h"
 #include "ObjLoading.h"
@@ -127,7 +128,8 @@ namespace
         collection.AddAssetCreator(image::CreateLoaderExternalT5(memory, searchPath));
         // collection.AddAssetCreator(std::make_unique<AssetLoaderSoundBank>(memory));
         // collection.AddAssetCreator(std::make_unique<AssetLoaderSoundPatch>(memory));
-        // collection.AddAssetCreator(std::make_unique<AssetLoaderClipMapPvs>(memory));
+        collection.AddAssetCreator(clip_map::CreateLoaderT5(memory, searchPath, zone));
+        collection.AddAssetCreator(clip_map::CreatePvsLoaderT5(memory, searchPath, zone));
         // collection.AddAssetCreator(std::make_unique<AssetLoaderComWorld>(memory));
         // collection.AddAssetCreator(std::make_unique<AssetLoaderGameWorldSp>(memory));
         // collection.AddAssetCreator(std::make_unique<AssetLoaderGameWorldMp>(memory));
